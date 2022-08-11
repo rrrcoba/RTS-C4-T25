@@ -130,4 +130,10 @@ public class Employee {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", dni=" + dni + ", name=" + name + ", surname=" + surname + ", department="
+				+ department + "]";
+	}
 }

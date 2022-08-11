@@ -128,4 +128,8 @@ public class Department {
 		return employees;
 	}
 
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + ", budget=" + budget + ", employees=" + employees + "]";
+	}
 }

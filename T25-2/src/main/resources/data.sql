@@ -13,8 +13,8 @@ CREATE TABLE `empleados` (
   `DNI` varchar(9) NOT NULL,
   `NOMBRE` nvarchar(100) NOT NULL,
   `APELLIDOS` nvarchar(255) NOT NULL,
-  `DEPARTAMENTO` int NOT NULL,
-  PRIMARY KEY (`DNI`),
-  CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`DEPARTAMENTO`) REFERENCES `departamentos` (`CODIGO`)
+  `DEPARTAMENTO` int default NULL,
+  PRIMARY KEY (`CODIGO`),
+  CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`DEPARTAMENTO`) REFERENCES `departamentos`(`CODIGO`)
 );
 INSERT INTO `empleados` (`DNI`,`NOMBRE`,`APELLIDOS`,`DEPARTAMENTO`) VALUES (123234877,'Michael','Rogers',1),(152934485,'Anand','Manikutty',1),(222364883,'Carol','Smith',2),(326587417,'Joe','Stevens',2);
