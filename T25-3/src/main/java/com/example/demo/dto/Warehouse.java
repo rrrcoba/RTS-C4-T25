@@ -105,7 +105,7 @@ public class Warehouse {
 	}
 
 	/**
-	 * @return the articles
+	 * @return the boxes
 	 */
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Box")
