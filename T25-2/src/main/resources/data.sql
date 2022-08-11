@@ -1,4 +1,6 @@
 DROP TABLE IF EXISTS `departamentos`;
+DROP TABLE IF EXISTS `empleados`;
+
 CREATE TABLE `departamentos` (
   `CODIGO` int NOT NULL auto_increment,
   `NOMBRE` nvarchar(100) NOT NULL,
@@ -7,7 +9,6 @@ CREATE TABLE `departamentos` (
 );
 INSERT INTO `departamentos` (`NOMBRE`,`PRESUPUESTO`) VALUES ('IT',65000),('Accounting',15000),('Human Resources',240000),('Research',55000);
 
-DROP TABLE IF EXISTS `empleados`;
 CREATE TABLE `empleados` (
   `CODIGO` int NOT NULL auto_increment,
   `DNI` varchar(9) NOT NULL,
