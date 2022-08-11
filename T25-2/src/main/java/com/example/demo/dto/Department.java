@@ -16,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-@Table(name="fabricantes")
-public class Maker {
+@Table(name="departamentos")
+public class Department {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -27,34 +27,40 @@ public class Maker {
 	@Column(name="NOMBRE")
 	private String name;
 	
+	@Column(name="PRESUPUESTO")
+	private int budget;
+	
 	@OneToMany
 	@JoinColumn(name="CODIGO")
-	private List<Article> articles;
+	private List<Employee> employees;
+	
 	
 	// Constructors
 	
 	/**
 	 * Default constructor
 	 */
-	public Maker () {
+	public Department () {
 		
 	}
 
 	/**
-	 * Constructor using fields
+	 * Constructor with all fields
 	 * 
 	 * @param id
 	 * @param name
-	 * @param articles
+	 * @param budget
+	 * @param employees
 	 */
-	public Maker(Long id, String name, List<Article> articles) {
+	public Department(Long id, String name, int budget, List<Employee> employees) {
+		super();
 		this.id = id;
 		this.name = name;
-		this.articles = articles;
+		this.budget = budget;
+		this.employees = employees;
 	}
 
 	
-
 	// Getters and setters
 
 	/**
@@ -64,12 +70,14 @@ public class Maker {
 		return id;
 	}
 
+
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 	/**
 	 * @return the name
@@ -78,6 +86,7 @@ public class Maker {
 		return name;
 	}
 
+
 	/**
 	 * @param name the name to set
 	 */
@@ -85,19 +94,38 @@ public class Maker {
 		this.name = name;
 	}
 
-	/**
-	 * @return the articles
-	 */
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Article")
-	public List<Article> getArticles() {
-		return articles;
-	}
 
 	/**
-	 * @param articles the articles to set
+	 * @return the budget
 	 */
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
+	public int getBudget() {
+		return budget;
 	}
+
+
+	/**
+	 * @param budget the budget to set
+	 */
+	public void setBudget(int budget) {
+		this.budget = budget;
+	}
+
+
+	/**
+	 * @param employees the employees to set
+	 */
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+
+	/**
+	 * @return the employees
+	 */
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Employee")
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
 }
