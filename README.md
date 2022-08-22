@@ -1,8 +1,8 @@
 # RTS-C4-T25-1
 First Exercise of task 25 of the T-Systems BootCamp of Reus.
 
-## GET localhost:8181/api/articles
-## GET localhost:8181/api/articles/{id}
-## POST localhost:8181/api/articles
-## PUT localhost:8181/api/articles/{id}
-## DELETE localhost:8181/api/articles/{id}
+## GET https://rts-c4-ta-25-1.herokuapp.com/api/articles
+## GET https://rts-c4-ta-25-1.herokuapp.com/api/articles/{id}
+## POST https://rts-c4-ta-25-1.herokuapp.com/api/articles
+## PUT lhttps://rts-c4-ta-25-1.herokuapp.com/api/articles/{id}
+## DELETE https://rts-c4-ta-25-1.herokuapp.com/api/articles/{id}
